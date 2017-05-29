@@ -32,6 +32,8 @@ class Plank {
         }
 
         this.createDiv();
+
+        this.div.addEventListener('click', (event: MouseEvent)=>this.checkPlank(event));
     }
 
     private createDiv(){
@@ -45,5 +47,10 @@ class Plank {
         min = Math.ceil(min);
         max = Math.floor(max);
         return Math.floor(Math.random() * (max - min)) + min;
-    }   
+    }
+
+    private checkPlank(e: MouseEvent){
+        let target = e.target;
+        console.log(target);
+    }
 }

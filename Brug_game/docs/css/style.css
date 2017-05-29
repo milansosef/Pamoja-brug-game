@@ -23,7 +23,7 @@ body *{
 bridge {
     background-image: url(../images/Rope_Bridge_Empty.png);
     background-size: cover;
-    width: 650px; height: 100%;
+    width: 650px; height: 960px;
     text-align: center;
     padding: auto;
     cursor: url(../images/Pointer.png), auto;

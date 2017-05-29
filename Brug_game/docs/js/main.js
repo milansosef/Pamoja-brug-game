@@ -22,6 +22,7 @@ class Plank {
                 break;
         }
         this.createDiv();
+        this.div.addEventListener('click', (event) => this.checkPlank(event));
     }
     createDiv() {
         this.div = document.createElement("plank" + this.randomInt(1, 4));
@@ -32,6 +33,10 @@ class Plank {
         min = Math.ceil(min);
         max = Math.floor(max);
         return Math.floor(Math.random() * (max - min)) + min;
+    }
+    checkPlank(e) {
+        let target = e.target;
+        console.log(target);
     }
 }
 class Bridge {
