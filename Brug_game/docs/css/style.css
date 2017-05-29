@@ -18,9 +18,11 @@ body *{
 }
 
 bridge {
-    background-image: url(../images/Rope_Bridge_Real.png);
+    background-image: url(../images/Rope_Bridge_Empty.png);
     background-size: cover;
     width: 500px; height: 100%;
+    text-align: center;
+    padding: auto;
     cursor: url(../images/Pointer.png), auto;
 }
 
