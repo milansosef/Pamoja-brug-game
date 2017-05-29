@@ -35,7 +35,9 @@ class Bridge {
 
     addPlanks(){
         this.planks = new Array<Plank>();
-        this.planks.push(new Plank(this));
+        for(let i=0;i<9;i++){
+            this.planks.push(new Plank(this, 80, 23 +(104 * i)));
+        }
     }
 
     public throwRock(e: MouseEvent){

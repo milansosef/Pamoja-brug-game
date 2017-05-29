@@ -6,7 +6,6 @@ class Game{
     bridge : Bridge;
 
     constructor(){
-        console.log('test');
-        this.bridge = new Bridge();
+        let bridge = new Bridge();
     }
 }
