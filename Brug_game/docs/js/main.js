@@ -1,39 +1,3 @@
-class Bridge {
-    constructor() {
-        this.div = document.createElement("bridge");
-        document.body.appendChild(this.div);
-        console.log('swag');
-        this.rect = this.div.getBoundingClientRect();
-        this.setPosition();
-        this.planks = new Array();
-        this.planks.push(new Plank(this));
-        this.div.addEventListener('click', (event) => this.throwRock(event));
-    }
-    setPosition() {
-        this.posX = window.innerWidth / 2 - this.rect.width / 2;
-        this.div.style.left = this.posX + "px";
-        this.div.style.top = this.posY + "px";
-    }
-    throwRock(e) {
-        this.rock = new Rock();
-    }
-}
-class Rock {
-    constructor() {
-        console.log("Rock thrown!");
-        this.div = document.createElement("rock");
-        document.body.appendChild(this.div);
-    }
-}
-class Game {
-    constructor() {
-        console.log('test');
-        this.bridge = new Bridge();
-    }
-}
-window.addEventListener("load", function () {
-    new Game();
-});
 class Plank {
     constructor(b) {
         this.bridge = b;
@@ -61,6 +25,50 @@ class Plank {
         this.div = document.createElement("plank");
         this.bridge.div.appendChild(this.div);
         this.div.style.backgroundImage = "url(images/" + this.image + ")";
+    }
+}
+class Bridge {
+    constructor() {
+        this.createDiv();
+        this.rect = this.div.getBoundingClientRect();
+        this.setPosition();
+        this.addPlanks();
+        this.div.addEventListener('click', (event) => this.throwRock(event));
+    }
+    createDiv() {
+        this.div = document.createElement("bridge");
+        document.body.appendChild(this.div);
+    }
+    setPosition() {
+        this.posX = window.innerWidth / 2 - this.rect.width / 2;
+        this.div.style.left = this.posX + "px";
+        this.div.style.top = this.posY + "px";
+    }
+    addPlanks() {
+        this.planks = new Array();
+        this.planks.push(new Plank(this));
+    }
+    throwRock(e) {
+        this.rock = new Rock();
+    }
+}
+class Game {
+    constructor() {
+        console.log('test');
+        this.bridge = new Bridge();
+    }
+}
+window.addEventListener("load", function () {
+    new Game();
+});
+class Rock {
+    constructor() {
+        console.log("Rock thrown!");
+        this.createDiv();
+    }
+    createDiv() {
+        this.div = document.createElement("rock");
+        document.body.appendChild(this.div);
     }
 }
 //# sourceMappingURL=main.js.map

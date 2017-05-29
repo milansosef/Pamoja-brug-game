@@ -1,24 +1,28 @@
+/// <reference path="plank.ts"/>
+
 class Bridge {
     public div: HTMLElement;
-    planks: Array<Plank>;
     private posX: number;
     private posY: number;
     private rect: ClientRect;
+    private planks: Array<Plank>;
     private rock: Rock;
 
     constructor(){
-        this.div = document.createElement("bridge");
-        document.body.appendChild(this.div);
+        this.createDiv();
 
-        console.log('swag');
         this.rect = this.div.getBoundingClientRect();
 
         this.setPosition();
+        this.addPlanks();
 
-        this.planks = new Array<Plank>();
-        this.planks.push(new Plank(this));
-
+        //Add rock when bridge is clicked
         this.div.addEventListener('click', (event: MouseEvent)=>this.throwRock(event));
+    }
+
+    createDiv(){
+        this.div = document.createElement("bridge");
+        document.body.appendChild(this.div);
     }
 
     setPosition() {
@@ -27,6 +31,11 @@ class Bridge {
 
         this.div.style.left = this.posX + "px";
         this.div.style.top = this.posY + "px";
+    }
+
+    addPlanks(){
+        this.planks = new Array<Plank>();
+        this.planks.push(new Plank(this));
     }
 
     public throwRock(e: MouseEvent){

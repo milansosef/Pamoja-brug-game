@@ -35,4 +35,5 @@ rock {
 plank {
     background-size: cover;
     width: 100px; height: 50px;
+    position: absolute;
 }

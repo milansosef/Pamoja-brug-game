@@ -1,5 +1,4 @@
 /// <reference path="bridge.ts"/>
-/// <reference path="rock.ts"/>
 
 //# sourceMappingURL=main.js.map
 
