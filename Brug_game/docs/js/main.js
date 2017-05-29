@@ -1,6 +1,8 @@
 class Plank {
-    constructor(b) {
+    constructor(b, x, y) {
         this.bridge = b;
+        this.x = x;
+        this.y = y;
         console.log("Plank created");
         this.init();
     }
@@ -22,9 +24,14 @@ class Plank {
         this.createDiv();
     }
     createDiv() {
-        this.div = document.createElement("plank");
+        this.div = document.createElement("plank" + this.randomInt(1, 4));
         this.bridge.div.appendChild(this.div);
-        this.div.style.backgroundImage = "url(images/" + this.image + ")";
+        this.div.style.transform = "translate(" + this.x + "px, " + this.y + "px";
+    }
+    randomInt(min, max) {
+        min = Math.ceil(min);
+        max = Math.floor(max);
+        return Math.floor(Math.random() * (max - min)) + min;
     }
 }
 class Bridge {
@@ -46,7 +53,9 @@ class Bridge {
     }
     addPlanks() {
         this.planks = new Array();
-        this.planks.push(new Plank(this));
+        for (let i = 0; i < 9; i++) {
+            this.planks.push(new Plank(this, 80, 23 + (104 * i)));
+        }
     }
     throwRock(e) {
         this.rock = new Rock();
@@ -54,8 +63,7 @@ class Bridge {
 }
 class Game {
     constructor() {
-        console.log('test');
-        this.bridge = new Bridge();
+        let bridge = new Bridge();
     }
 }
 window.addEventListener("load", function () {

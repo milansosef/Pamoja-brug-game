@@ -3,9 +3,13 @@ class Plank {
     private hole: string;
     private image: string;
     private bridge: Bridge;
+    private x: number;
+    private y: number;
 
-    constructor(b: Bridge){
+    constructor(b: Bridge, x:number, y:number ){
         this.bridge = b;
+        this.x = x;
+        this.y = y;
         console.log("Plank created");
         this.init();
     }
@@ -31,9 +35,15 @@ class Plank {
     }
 
     private createDiv(){
-        this.div = document.createElement("plank");
+        this.div = document.createElement("plank" + this.randomInt(1,4));
         this.bridge.div.appendChild(this.div);
 
-        this.div.style.backgroundImage = "url(images/" + this.image + ")";
+        this.div.style.transform = "translate("+this.x+"px, "+this.y+"px";
     }
+
+    private randomInt(min:number, max:number){
+        min = Math.ceil(min);
+        max = Math.floor(max);
+        return Math.floor(Math.random() * (max - min)) + min;
+    }   
 }

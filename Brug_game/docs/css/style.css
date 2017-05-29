@@ -14,13 +14,16 @@ body {
 body *{
     display: block;
     position: absolute;
+    margin: 0px; padding: 0px;
+    box-sizing: border-box;
+    background-repeat: no-repeat;
     cursor: url(../images/Pointer.png), auto;
 }
 
 bridge {
     background-image: url(../images/Rope_Bridge_Empty.png);
     background-size: cover;
-    width: 500px; height: 100%;
+    width: 650px; height: 100%;
     text-align: center;
     padding: auto;
     cursor: url(../images/Pointer.png), auto;
@@ -32,8 +35,30 @@ rock {
     width: 100px;  height: 100px;
 }
 
-plank {
+plank1 {
     background-size: cover;
-    width: 100px; height: 50px;
     position: absolute;
+    width: 500px; height: 90px;
+    background-image: url('../images/Stairs_1.png');
+}
+
+plank2 {
+    background-size: cover;
+    position: absolute;
+    width: 500px; height: 90px;
+    background-image: url('../images/Broken_Left.png');
+}
+
+plank3 {
+    background-size: cover;
+    position: absolute;
+    width: 500px; height: 90px;
+    background-image: url('../images/Broken_Right.png');
+}
+
+plank4 {
+    background-size: cover;
+    position: absolute;
+    width: 500px; height: 90px;
+    background-image: url('../images/Broken_Middle.png');
 }
