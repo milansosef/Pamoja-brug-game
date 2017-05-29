@@ -1,19 +1,21 @@
 class Bridge {
     private div: HTMLElement;
-    planks: Array<Plank>;
+    //planks: Array<Plank>;
     private posX: number;
     private posY: number;
     private rect: ClientRect;
+    private rock: Rock;
 
     constructor(){
         this.div = document.createElement("bridge");
         document.body.appendChild(this.div);
 
         this.rect = this.div.getBoundingClientRect();
-
         this.setPosition();
 
-        this.planks = new Array<Plank>();
+        //this.planks = new Array<Plank>();
+
+        this.div.addEventListener('click', (event: MouseEvent)=>this.throwRock(event));
     }
 
     setPosition() {
@@ -22,5 +24,9 @@ class Bridge {
 
         this.div.style.left = this.posX + "px";
         this.div.style.top = this.posY + "px";
+    }
+
+    public throwRock(e: MouseEvent){
+        this.rock = new Rock();
     }
 }
