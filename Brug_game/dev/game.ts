@@ -1,6 +1,13 @@
+/// <reference path="bridge.ts"/>
+/// <reference path="rock.ts"/>
+
+//# sourceMappingURL=main.js.map
+
 class Game{
-    hoi : number;
+    bridge : Bridge;
+
     constructor(){
         console.log('test');
+        this.bridge = new Bridge();
     }
 }
