@@ -14,7 +14,7 @@ body {
 body *{
     display: block;
     position: absolute;
-    cursor: url(http://145.24.202.36/pointer.png), auto;
+    cursor: url(../images/Pointer.png), auto;
 }
 
 bridge {
@@ -30,6 +30,7 @@ rock {
     width: 100px;  height: 100px;
 }
 
-.mouse-cursor {
-
+plank {
+    background-size: cover;
+    width: 100px; height: 50px;
 }

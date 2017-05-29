@@ -1,6 +1,6 @@
 class Bridge {
-    private div: HTMLElement;
-    //planks: Array<Plank>;
+    public div: HTMLElement;
+    planks: Array<Plank>;
     private posX: number;
     private posY: number;
     private rect: ClientRect;
@@ -15,7 +15,9 @@ class Bridge {
 
         this.setPosition();
 
-        //this.planks = new Array<Plank>();
+        this.planks = new Array<Plank>();
+        this.planks.push(new Plank(this));
+
         this.div.addEventListener('click', (event: MouseEvent)=>this.throwRock(event));
     }
 
