@@ -10,11 +10,12 @@ class Bridge {
         this.div = document.createElement("bridge");
         document.body.appendChild(this.div);
 
+        console.log('swag');
         this.rect = this.div.getBoundingClientRect();
+
         this.setPosition();
 
         //this.planks = new Array<Plank>();
-
         this.div.addEventListener('click', (event: MouseEvent)=>this.throwRock(event));
     }
 

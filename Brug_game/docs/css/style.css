@@ -11,10 +11,25 @@ body {
     height: 100%;
 }
 
+body *{
+    display: block;
+    position: absolute;
+    cursor: url(http://145.24.202.36/pointer.png), auto;
+}
+
 bridge {
     background-image: url(../images/Rope_Bridge_Real.png);
     background-size: cover;
     width: 500px; height: 100%;
-    display: block;
-    position: absolute;
+    cursor: url(../images/Pointer.png), auto;
+}
+
+rock {
+    background-image: url(../images/Stone.png);
+    background-size: cover;
+    width: 100px;  height: 100px;
+}
+
+.mouse-cursor {
+
 }
