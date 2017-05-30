@@ -25,7 +25,7 @@ class Plank {
         this.div.addEventListener('click', (event) => this.checkPlank(event));
     }
     createDiv() {
-        this.div = document.createElement("plank" + this.randomInt(1, 4));
+        this.div = document.createElement("plank" + this.randomInt(1, 5));
         this.bridge.div.appendChild(this.div);
         this.div.style.transform = "translate(" + this.x + "px, " + this.y + "px";
     }
@@ -81,6 +81,23 @@ class Rock {
     }
     createDiv() {
         this.div = document.createElement("rock");
+        document.body.appendChild(this.div);
+    }
+}
+class Part {
+    constructor() {
+    }
+    createDiv() {
+        this.div = document.createElement("part");
+        document.body.appendChild(this.div);
+    }
+}
+class Broken extends Part {
+    constructor() {
+        super();
+    }
+    createDiv() {
+        this.div = document.createElement("broken");
         document.body.appendChild(this.div);
     }
 }

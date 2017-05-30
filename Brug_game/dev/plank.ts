@@ -37,7 +37,7 @@ class Plank {
     }
 
     private createDiv(){
-        this.div = document.createElement("plank" + this.randomInt(1,4));
+        this.div = document.createElement("plank" + this.randomInt(1, 5));
         this.bridge.div.appendChild(this.div);
 
         this.div.style.transform = "translate("+this.x+"px, "+this.y+"px";
